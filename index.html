@@ -145,6 +145,69 @@
         -webkit-backdrop-filter: blur(10px);
       }
       
+      /* Animações para cards */
+      .card-hover:hover {
+        transform: translateY(-8px) scale(1.02);
+      }
+      
+      /* Gradientes animados */
+      .text-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-size: 200% 200%;
+        animation: shimmer 3s ease-in-out infinite;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      /* Efeito brilho nos botões */
+      .btn-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+      
+      /* Animações personalizadas */
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+      
+      @keyframes glow {
+        0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+        50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.3); }
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        33% { transform: translateY(-15px) rotate(120deg); }
+        66% { transform: translateY(-5px) rotate(240deg); }
+      }
+      
+      @keyframes bounce-slow {
+        0%, 100% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-10px) scale(1.05); }
+      }
+      
+      @keyframes pulse-slow {
+        0%, 100% { opacity: 0.8; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(1.02); }
+      }
+      
+      /* Hover effects melhorados */
+      .card-hover:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      }
+      
+      /* Gradiente de texto melhorado */
+      .text-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        background-size: 200% 200%;
+        animation: shimmer 4s ease-in-out infinite;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
       /* Scroll animations */
       .fade-in {
         opacity: 0;
@@ -276,7 +339,7 @@
             <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
             </svg>
-            +5 Anos de Experiência em Dados
+            +15 Anos de Experiência em Dados
           </div>
           
           <!-- Título Principal -->
@@ -291,9 +354,9 @@
           </h1>
           
           <!-- Subtítulo -->
-          <p class="text-xl sm:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">>
-            Especialistas em <strong>Engenharia de Dados</strong> e <strong>Business Intelligence</strong>. 
-            Ajudamos empresas a se tornarem verdadeiramente <em>Data Driven</em> com soluções inovadoras e eficientes.
+          <p class="text-xl sm:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Especialistas em <strong>Engenharia de Dados</strong>, <strong>Business Intelligence</strong> e <strong>Desenvolvimento Web</strong>. 
+            Ajudamos empresas a se tornarem verdadeiramente <em>Data Driven</em> com soluções digitais inovadoras e eficientes.
           </p>
           
           <!-- Estatísticas -->
@@ -318,13 +381,13 @@
           
           <!-- Botões de Ação -->
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="#contato" class="group bg-white text-primary-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/25 flex items-center">
+            <a href="#contato" class="group bg-gradient-to-r from-white to-gray-100 text-primary-600 px-8 py-4 rounded-full font-bold text-lg hover:from-gray-100 hover:to-white transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/25 flex items-center btn-glow">
               <span>Solicitar Consultoria</span>
               <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
               </svg>
             </a>
-            <a href="#sobre" class="group border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary-600 transform hover:scale-105 transition-all duration-300 flex items-center">
+            <a href="#sobre" class="group border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary-600 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm bg-white/10 flex items-center">
               <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
                 <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
@@ -764,22 +827,151 @@
           </div>
         </div>
         
+        <!-- Nova Seção: Desenvolvimento Web -->
+        <div class="mt-20 fade-in">
+          <div class="text-center mb-16">
+            <span class="inline-block px-4 py-2 bg-gradient-to-r from-pink-100 to-purple-100 text-pink-600 rounded-full text-sm font-semibold mb-4">
+              Desenvolvimento Web
+            </span>
+            <h3 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Criamos <span class="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Sites Modernos</span>
+            </h3>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Desenvolvimento de sites profissionais, responsivos e otimizados para todos os tipos de negócios
+            </p>
+          </div>
+          
+          <!-- Grid de Serviços Web -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Site Institucional -->
+            <div class="group bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 card-hover border border-pink-100 hover:border-pink-200">
+              <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 mb-2">Sites Institucionais</h4>
+              <p class="text-sm text-gray-600">Apresente sua empresa com elegância e profissionalismo</p>
+            </div>
+            
+            <!-- Pequenas Empresas -->
+            <div class="group bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 card-hover border border-blue-100 hover:border-blue-200">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 mb-2">Pequenas Empresas</h4>
+              <p class="text-sm text-gray-600">Soluções acessíveis para pequenos negócios crescerem online</p>
+            </div>
+            
+            <!-- Orçamentos e Reservas -->
+            <div class="group bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 card-hover border border-green-100 hover:border-green-200">
+              <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 mb-2">Orçamentos & Reservas</h4>
+              <p class="text-sm text-gray-600">Sistemas integrados para cotações e agendamentos</p>
+            </div>
+            
+            <!-- Pedidos Online -->
+            <div class="group bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 card-hover border border-orange-100 hover:border-orange-200">
+              <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v4a2 2 0 01-2 2H9a2 2 0 01-2-2v-4m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 mb-2">Pedidos Online</h4>
+              <p class="text-sm text-gray-600">E-commerce e sistemas de vendas digitais</p>
+            </div>
+            
+            <!-- Formulários -->
+            <div class="group bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 card-hover border border-purple-100 hover:border-purple-200">
+              <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 mb-2">Formulários Avançados</h4>
+              <p class="text-sm text-gray-600">Coleta e processamento inteligente de dados</p>
+            </div>
+            
+            <!-- Blogs e Portais -->
+            <div class="group bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 card-hover border border-teal-100 hover:border-teal-200">
+              <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H15"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 mb-2">Blogs & Portais</h4>
+              <p class="text-sm text-gray-600">Plataformas de conteúdo e gerenciamento editorial</p>
+            </div>
+            
+            <!-- Portfólios -->
+            <div class="group bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 card-hover border border-rose-100 hover:border-rose-200">
+              <div class="w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 mb-2">Portfólios Online</h4>
+              <p class="text-sm text-gray-600">Vitrines digitais para profissionais criativos</p>
+            </div>
+            
+            <!-- Landing Pages -->
+            <div class="group bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 card-hover border border-yellow-100 hover:border-yellow-200">
+              <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 mb-2">Landing Pages</h4>
+              <p class="text-sm text-gray-600">Páginas otimizadas para conversão e marketing</p>
+            </div>
+            
+            <!-- Design Responsivo -->
+            <div class="group bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 card-hover border border-indigo-100 hover:border-indigo-200">
+              <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a1 1 0 001-1v-1H7v1a1 1 0 001 1zM3 9a2 2 0 012-2V5a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 012 2v4a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 mb-2">Design Responsivo</h4>
+              <p class="text-sm text-gray-600">Perfeito em todos os dispositivos e telas</p>
+            </div>
+            
+            <!-- Manutenção -->
+            <div class="group bg-gradient-to-br from-gray-50 to-slate-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 card-hover border border-gray-100 hover:border-gray-200">
+              <div class="w-12 h-12 bg-gradient-to-br from-gray-500 to-slate-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-bold text-gray-900 mb-2">Manutenção & Updates</h4>
+              <p class="text-sm text-gray-600">Suporte contínuo e atualizações regulares</p>
+            </div>
+          </div>
+        </div>
+
         <!-- Call to Action -->
-        <div class="text-center fade-in">
-          <div class="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 lg:p-12 text-white">
+        <div class="text-center fade-in mt-20">
+          <div class="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 lg:p-12 text-white shadow-2xl">
             <h3 class="text-2xl lg:text-3xl font-bold mb-4">
-              Pronto para Transformar seus Dados?
+              Pronto para Transformar seu Negócio Digital?
             </h3>
             <p class="text-lg lg:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Entre em contato conosco e descubra como podemos ajudar sua empresa a alcançar novos patamares com soluções inteligentes em dados.
+              Entre em contato conosco e descubra como podemos ajudar sua empresa com soluções completas em dados e desenvolvimento web.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#contato" class="bg-white text-primary-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300">
+              <a href="#contato" class="bg-white text-primary-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg">
                 Solicitar Orçamento
               </a>
-              <!-- <a href="tel:+5511999999999" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary-600 transform hover:scale-105 transition-all duration-300">
-                Ligar Agora
-              </a> -->
+              <a href="#sobre" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary-600 transform hover:scale-105 transition-all duration-300">
+                Saiba Mais
+              </a>
             </div>
           </div>
         </div>
